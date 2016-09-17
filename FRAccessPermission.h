@@ -1,5 +1,5 @@
 //
-//  AccessPermission.h
+//  FRAccessPermission.h
 //  sugeOnlineMart
 //
 //  Created by 1860 on 16/9/14.
@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AccessPermission : NSObject
+@interface FRAccessPermission : NSObject
+
++ (instancetype)shareAccessPermission;
 
 /**
  *  通讯录权限

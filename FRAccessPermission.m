@@ -1,12 +1,12 @@
 //
-//  AccessPermission.m
+//  FRAccessPermission.m
 //  sugeOnlineMart
 //
 //  Created by 1860 on 16/9/14.
 //  Copyright © 2016年 FanrongQu. All rights reserved.
 //  访问权限工具类
 
-#import "AccessPermission.h"
+#import "FRAccessPermission.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AddressBook/AddressBook.h>
 #import <AssetsLibrary/ALAssetsLibrary.h>
@@ -14,14 +14,41 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import <EventKit/EventKit.h>
 
-@interface AccessPermission ()
+@interface FRAccessPermission ()
 
 /**  app名称  */
 @property (nonatomic, strong) NSString *appName;
 
 @end
 
-@implementation AccessPermission
+@implementation FRAccessPermission
+
+// 用来保存唯一的单例
+static id _instace;
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instace = [super allocWithZone:zone];
+    });
+    return _instace;
+}
+
++ (instancetype)shareAccessPermission
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instace = [[self alloc]init];
+    });
+    return _instace;
+}
+
+- (id)copyWithZone:(NSZone *)zone
+{
+    return _instace;
+}
+
 
 /**
  *  通讯录权限
