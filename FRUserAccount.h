@@ -10,7 +10,7 @@
 
 @interface FRUserAccount : NSObject
 
-+ (instancetype)shareUserAccount;
++ (instancetype)shareFRUserAccount;
 
 /**
  *  添加/更新账号密码

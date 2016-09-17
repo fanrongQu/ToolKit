@@ -10,6 +10,7 @@
 
 @interface FRPlist : NSObject
 
++ (instancetype)shareFRPlist;
 /**
  *  创建plist文件
  *

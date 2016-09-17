@@ -10,7 +10,7 @@
 
 @interface FRAccessPermission : NSObject
 
-+ (instancetype)shareAccessPermission;
++ (instancetype)shareFRAccessPermission;
 
 /**
  *  通讯录权限

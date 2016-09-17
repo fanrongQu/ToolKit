@@ -26,7 +26,7 @@ static id _instace;
     return _instace;
 }
 
-+ (instancetype)shareUserAccount
++ (instancetype)shareFRUserAccount
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

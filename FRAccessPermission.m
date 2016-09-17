@@ -35,7 +35,7 @@ static id _instace;
     return _instace;
 }
 
-+ (instancetype)shareAccessPermission
++ (instancetype)shareFRAccessPermission
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
