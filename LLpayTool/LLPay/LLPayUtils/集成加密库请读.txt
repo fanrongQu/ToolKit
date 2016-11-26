@@ -1,0 +1,5 @@
+此处有两个文件源文件，一个lib库
+
+假如你只使用md5，hmac，请不用添加，libRsaCrypto.a，并把LLPayUtil.h里面的 kLLPayUtilNeedRSASign 注释
+
+假如你使用rsa, 请全部添加，并 把LLPayUtil.h里面的 kLLPayUtilNeedRSASign 注释取消

@@ -7,6 +7,7 @@
 //  访问权限工具类
 
 #import "FRAccessPermission.h"
+#import <UIKit/UIUserNotificationSettings.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AddressBook/AddressBook.h>
 #import <AssetsLibrary/ALAssetsLibrary.h>
@@ -49,6 +50,22 @@ static id _instace;
     return _instace;
 }
 
+/**
+ *  通知
+ *
+ *  @param controller 当前控制器
+ *
+ *  @return 通知访问权限状态
+ */
+- (BOOL)AllowedNotificationPemissionWithController:(UIViewController *)controller {
+    
+    UIUserNotificationSettings *setting = [[UIApplication sharedApplication] currentUserNotificationSettings];
+    if (UIUserNotificationTypeNone == setting.types) {
+        [self presentAlertControllerWithTitle:@"消息通知权限受限" message:[NSString stringWithFormat:@"请在iPhone的\"设置->通知\"选项中，允许\"%@\"使用通知.",self.appName] controller:controller];
+        return NO;
+    }
+    return YES;
+}
 
 /**
  *  通讯录权限

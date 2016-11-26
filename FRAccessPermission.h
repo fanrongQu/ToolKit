@@ -12,6 +12,15 @@
 
 + (instancetype)shareFRAccessPermission;
 
+
+/**
+ *  通知
+ *
+ *  @param controller 当前控制器
+ *
+ *  @return 通知访问权限状态
+ */
+- (BOOL)AllowedNotificationPemissionWithController:(UIViewController *)controller;
 /**
  *  通讯录权限
  *
